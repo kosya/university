@@ -18,10 +18,9 @@ namespace _2_3_2
                 Console.WriteLine();
                 Console.WriteLine("Write 0 to exit");
                 Console.WriteLine("Write 1 to add an element to the list");
-                Console.WriteLine("Write 2 to delete a head element from the list");
-                Console.WriteLine("Write 3 to see all elements of the list");
-                Console.WriteLine("Write 4 to delete the first specific element");
-                Console.WriteLine("Write 5 to search for the element in the list");
+                Console.WriteLine("Write 2 to see all elements of the list");
+                Console.WriteLine("Write 3 to delete the first specific element");
+                Console.WriteLine("Write 4 to search for the element in the list");
                 Console.Write("Command number: ");
                 command = Convert.ToInt32(Console.ReadLine());
                 switch (command)
@@ -31,20 +30,15 @@ namespace _2_3_2
                             Console.Write("Write an element: ");
                             int tmp = 0;
                             tmp = Convert.ToInt32(Console.ReadLine());
-                            list.Push(tmp);
+                            list.AddElement(tmp);
                             break;
                         }
                     case 2:
                         {
-                            list.Pop();
-                            break;
-                        }
-                    case 3:
-                        {
                             list.PrintList();
                             break;
                         }
-                    case 4:
+                    case 3:
                         {
                             Console.Write("Write an element: ");
                             int tmp = 0;
@@ -52,7 +46,7 @@ namespace _2_3_2
                             list.DeleteElement(tmp);
                             break;
                         }
-                    case 5:
+                    case 4:
                         {
                             Console.Write("Write an element: ");
                             int tmp = 0;

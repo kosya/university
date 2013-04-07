@@ -6,112 +6,136 @@ using System.Threading.Tasks;
 
 namespace _2_3_3
 {
-    class ListElement
+    public class List
     {
-        public int element;
-        public ListElement next;
-    }
+        private ListElement head = null;
+        private ListElement tail = null;
 
-    class List
-    {
-        public ListElement head = null;
-        public ListElement tail = null;
-
-        public void Push(int value)
+        public List()
         {
-            if (head == null)
+        }
+
+        /// <summary>
+        /// Method, which adds a new eleent in the list
+        /// </summary>
+        /// <param name="value">value of an element</param>
+        public void AddElement(int value)
+        {
+            if (IsEmpty())
             {
-                ListElement tmp = new ListElement();
+                ListElement tmp = new ListElement(null, value);
                 head = tmp;
-                tmp.next = null;
-                tmp.element = value;
                 tail = tmp;
             }
             else
             {
-                ListElement tmp = new ListElement();
-                tmp.element = value;
-                tmp.next = null;
-                tail.next = tmp;
+                ListElement tmp = new ListElement(null, value);
+                tail.Next = tmp;
                 tail = tmp;
             }
         }
 
-        public void DeleteElement(int value)
+        /// <summary>
+        /// Method, which deletes an element from the list
+        /// </summary>
+        /// <param name="value">value of the element, which is wanted to be deleted</param>
+        /// <returns>value of deleted element</returns>
+        public int DeleteElement(int value)
         {
-            if (head != null)
+            if (!IsEmpty())
             {
-                if (head.next != null)
+                if (head.Next != null)
                 {
-                    ListElement tmp = head;
-                    while (tmp.next.element != value && tmp != null)
+                    if (head.Element == value)
                     {
-                        tmp = tmp.next;
+                        head = head.Next;
+                        return value;
+                    }
+                    ListElement tmp = head;
+                    while (tmp.Next.Element != value && tmp != null)
+                    {
+                        tmp = tmp.Next;
                     }
                     if (tmp == null)
                     {
                         Console.WriteLine("This element doesn't exist");
+                        return 0;
                     }
                     else
                     {
-                        tmp.next = tmp.next.next;
+                        tmp.Next = tmp.Next.Next;
                         Console.WriteLine("Element was successfully deleted");
+                        return tmp.Element;
                     }
                 }
                 else
                 {
-                    if (head.element == value)
+                    if (head.Element == value)
                     {
+                        int tmp = head.Element;
                         head = null;
                         Console.WriteLine("Element was successfully deleted");
+                        return tmp;
                     }
                     else
                     {
                         Console.WriteLine("This element doesn't exist");
+                        return 0;
                     }
                 }
             }
             else
             {
                 Console.WriteLine("This element doesn't exist");
+                return 0;
             }
         }
 
+        /// <summary>
+        /// Method, which prints all elements of the list
+        /// </summary>
         public void PrintList()
         {
-            if (head != null)
+            if (!IsEmpty())
             {
                 ListElement tmp = head;
                 while (tmp != null)
                 {
-                    Console.Write("{0} ", tmp.element);
-                    tmp = tmp.next;
+                    Console.Write("{0} ", tmp.Element);
+                    tmp = tmp.Next;
                 }
             }
         }
 
+        /// <summary>
+        /// Method, which searches element in the list
+        /// </summary>
+        /// <param name="value">value of the required element</param>
+        /// <returns>if element is in the list trhen returns "true" else returns "false"</returns>
         public bool SearchElement(int value)
         {
-            if (head != null)
+            if (!IsEmpty())
             {
                 ListElement tmp = head;
-                while (tmp.element != value && tmp.next != null)
+                while (tmp.Element != value && tmp.Next != null)
                 {
-                    tmp = tmp.next;
+                    tmp = tmp.Next;
                 }
-                if (tmp.element == value)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return tmp.Element == value;
             }
             else
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Method, which shows us if list is empty or not
+        /// </summary>
+        /// <returns>if list is empty then returns true else returns false</returns>
+        public bool IsEmpty()
+        {
+            return head == null;
         }
     }
 }
