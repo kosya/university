@@ -54,6 +54,7 @@ namespace _2_3_3
                             int value = 0;
                             value = Convert.ToInt32(Console.ReadLine());
                             hashTable.DeleteElement(value);
+                            Console.WriteLine("Element was successfully deleted");
                             break;
                         }
                     case 3:

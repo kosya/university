@@ -30,16 +30,26 @@ namespace _2_3_1
                             int tmp = 0;
                             tmp = Convert.ToInt32(Console.ReadLine());
                             stack.Push(tmp);
+                            Console.WriteLine("Element was successfully added");
                             break;
                         }
                     case 2:
                         {
                             stack.Pop();
+                            Console.WriteLine("Element was successfully deleted");
                             break;
                         }
                     case 3:
                         {
-                            stack.PrintStack();
+                            if (stack.IsEmpty())
+                            {
+                                Console.WriteLine("No elements in the stack");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Elements of the stack:");
+                                stack.PrintStack();
+                            }
                             break;
                         }
                 }

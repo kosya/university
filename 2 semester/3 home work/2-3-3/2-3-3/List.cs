@@ -58,13 +58,11 @@ namespace _2_3_3
                     }
                     if (tmp == null)
                     {
-                        Console.WriteLine("This element doesn't exist");
-                        return 0;
+                        throw new NullReferenceException("This element doesn't exist");
                     }
                     else
                     {
                         tmp.Next = tmp.Next.Next;
-                        Console.WriteLine("Element was successfully deleted");
                         return tmp.Element;
                     }
                 }
@@ -74,20 +72,17 @@ namespace _2_3_3
                     {
                         int tmp = head.Element;
                         head = null;
-                        Console.WriteLine("Element was successfully deleted");
                         return tmp;
                     }
                     else
                     {
-                        Console.WriteLine("This element doesn't exist");
-                        return 0;
+                        throw new NullReferenceException("This element doesn't exist");
                     }
                 }
             }
             else
             {
-                Console.WriteLine("This element doesn't exist");
-                return 0;
+                throw new NullReferenceException("This element doesn't exist");
             }
         }
 

@@ -35,7 +35,15 @@ namespace _2_3_2
                         }
                     case 2:
                         {
-                            list.PrintList();
+                            if (list.IsEmpty())
+                            {
+                                Console.WriteLine("No elements in the list");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Elements of the list");
+                                list.PrintList();
+                            }
                             break;
                         }
                     case 3:
@@ -44,6 +52,7 @@ namespace _2_3_2
                             int tmp = 0;
                             tmp = Convert.ToInt32(Console.ReadLine());
                             list.DeleteElement(tmp);
+                            Console.WriteLine("Element was successfully deleted");
                             break;
                         }
                     case 4:

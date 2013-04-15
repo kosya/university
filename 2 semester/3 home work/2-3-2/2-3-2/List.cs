@@ -16,7 +16,7 @@ namespace _2_3_2
         }
 
         /// <summary>
-        /// Method, which adds a new eleent in the list
+        /// Method, which adds a new element in the list
         /// </summary>
         /// <param name="value">value of an element</param>
         public void AddElement(int value)
@@ -58,13 +58,11 @@ namespace _2_3_2
                     }
                     if (tmp == null)
                     {
-                        Console.WriteLine("This element doesn't exist");
-                        return 0;
+                        throw new NullReferenceException("This element doesn't exist");
                     }
                     else
                     {
                         tmp.Next = tmp.Next.Next;
-                        Console.WriteLine("Element was successfully deleted");
                         return value;
                     }
                 }
@@ -73,20 +71,17 @@ namespace _2_3_2
                     if (head.Element == value)
                     {
                         head = null;
-                        Console.WriteLine("Element was successfully deleted");
                         return value;
                     }
                     else
                     {
-                        Console.WriteLine("This element doesn't exist");
-                        return 0;
+                        throw new NullReferenceException("This element doesn't exist");
                     }
                 }
             }
             else
             {
-                Console.WriteLine("No elements in the list");
-                return 0;
+                throw new NullReferenceException("No elements in the list");
             }
         }
 
@@ -95,21 +90,13 @@ namespace _2_3_2
         /// </summary>
         public void PrintList()
         {
-            if (!IsEmpty())
+            ListElement tmp = head;
+            while (tmp != null)
             {
-                Console.WriteLine("Elements of the list");
-                ListElement tmp = head;
-                while (tmp != null)
-                {
-                    Console.Write("{0} ", tmp.Element);
-                    tmp = tmp.Next;
-                }
-                Console.WriteLine();
+                Console.Write("{0} ", tmp.Element);
+                tmp = tmp.Next;
             }
-            else
-            {
-                Console.WriteLine("No elements in the list");
-            }
+            Console.WriteLine();
         }
 
         /// <summary>

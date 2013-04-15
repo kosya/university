@@ -22,7 +22,6 @@ namespace _2_3_1
         {
             StackElement tmp = new StackElement(head, value);
             head = tmp;
-            Console.WriteLine("Element was successfully added");
         }
         
         /// <summary>
@@ -35,13 +34,11 @@ namespace _2_3_1
             {
                 int result = head.Element;
                 head = head.Next;
-                Console.WriteLine("Element was successfully deleted");
                 return result;
             }
             else
             {
-                Console.WriteLine("No elements in the stack");
-                return 0;
+                throw new NullReferenceException("No Elements in the stack");
             }
         }
 
@@ -51,18 +48,10 @@ namespace _2_3_1
         public void PrintStack()
         {
             StackElement tmp = head;
-            if (IsEmpty())
+            while (tmp != null)
             {
-                Console.WriteLine("No elements in the stack");
-            }
-            else
-            {
-                Console.WriteLine("Elements of the stack:");
-                while (tmp != null)
-                {
-                    Console.WriteLine("{0}", tmp.Element);
-                    tmp = tmp.Next;
-                }
+                Console.WriteLine("{0}", tmp.Element);
+                tmp = tmp.Next;
             }
         }
 
