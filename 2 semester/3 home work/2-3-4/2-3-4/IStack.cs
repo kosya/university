@@ -12,13 +12,13 @@ namespace _2_3_4
         /// Adds a new element in the stack
         /// </summary>
         /// <param name="value">value of the element</param>
-        void Push(int value);
+        void Push(float value);
 
         /// <summary>
         /// Returns value of the deleted element of the stack
         /// </summary>
         /// <returns>value of the deleted element</returns>
-        int Pop();
+        float Pop();
         
         /// <summary>
         /// Returns amount of elements of the stack

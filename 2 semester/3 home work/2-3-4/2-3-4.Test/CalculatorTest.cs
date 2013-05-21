@@ -8,27 +8,24 @@ namespace _2_3_4.Test
     {
         Calculator calculator;
 
-        [TestInitialize]
-        public void Initialize()
-        {
-            calculator = new Calculator("2222+33*4-10+0-177");
-        }
-
-        [TestMethod]
-        public void TestGetNumber()
-        {
-            Assert.AreEqual(calculator.GetNumber(-1), 2222);
-            Assert.AreEqual(calculator.GetNumber(4), 33);
-            Assert.AreEqual(calculator.GetNumber(7), 4);
-            Assert.AreEqual(calculator.GetNumber(9), 10);
-            Assert.AreEqual(calculator.GetNumber(12), 0);
-            Assert.AreEqual(calculator.GetNumber(14), 177);
-        }
-
         [TestMethod]
         public void TestCalculate()
         {
-            Assert.AreEqual(calculator.Calculate(), 2167);
+            calculator = new Calculator("22 13 +");
+            Assert.AreEqual(calculator.Calculate(), 35);
+
+            calculator = new Calculator("-22 13 -");
+            Assert.AreEqual(calculator.Calculate(), -35);
+
+            calculator = new Calculator("-21,3 10 *");
+            Assert.AreEqual(calculator.Calculate(), -213);
+
+            calculator = new Calculator("22 2 /");
+            Assert.AreEqual(calculator.Calculate(), 11);
+
+            calculator = new Calculator("22 2 / 3 + -7 - 6 *");
+            Assert.AreEqual(calculator.Calculate(), 126);
+
             calculator = new Calculator("0");
             Assert.AreEqual(calculator.Calculate(), 0);
         }

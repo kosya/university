@@ -8,22 +8,29 @@ namespace _2_3_4
 {
     public class StackArray : IStack
     {
-        private List<int> array = new List<int>();
+        private List<float> array = new List<float>();
        
         public StackArray()
         {
         }
 
-        public void Push(int value)
+        public void Push(float value)
         {
             array.Add(value);
         }
 
-        public int Pop()
+        public float Pop()
         {
-            int tmp = array[array.Count() - 1];
-            array.RemoveAt(array.Count() - 1);
-            return tmp;
+            if (array.Count() == 0)
+            {
+                throw new EmptyStackException("Empty Stack"); 
+            }
+            else
+            {
+                float tmp = array[array.Count() - 1];
+                array.RemoveAt(array.Count() - 1);
+                return tmp;
+            }
         }
 
         public int AmountOfElements()

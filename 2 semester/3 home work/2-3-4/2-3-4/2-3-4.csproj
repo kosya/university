@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs" />
+    <Compile Include="DivideZeroException.cs" />
+    <Compile Include="EmptyStackException.cs" />
     <Compile Include="IStack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StackArray.cs" />
     <Compile Include="StackElement.cs" />
-    <Compile Include="Сalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

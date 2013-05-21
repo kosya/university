@@ -16,6 +16,6 @@ namespace _2_3_4
             Calculator calculator = new Calculator(str);
 
             Console.WriteLine("{0}", calculator.Calculate());
-        }
+         }
     }
 }
