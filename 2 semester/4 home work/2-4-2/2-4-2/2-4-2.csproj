@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33944250-9DF6-41E1-A06D-6088A6F87951}</ProjectGuid>
+    <ProjectGuid>{95806471-A009-439C-A15B-471BAF0432FD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_2_4_2</RootNamespace>
@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HashFunction.cs" />
+    <Compile Include="EmptyListException.cs" />
+    <Compile Include="ExistenceException.cs" />
+    <Compile Include="HashFunction1.cs" />
+    <Compile Include="HashFunction2.cs" />
     <Compile Include="HashTable.cs" />
+    <Compile Include="IHashFunction.cs" />
     <Compile Include="List.cs" />
     <Compile Include="ListElement.cs" />
     <Compile Include="Program.cs" />

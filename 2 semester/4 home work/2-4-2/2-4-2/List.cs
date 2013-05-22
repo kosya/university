@@ -58,7 +58,7 @@ namespace _2_4_2
                     }
                     if (tmp == null)
                     {
-                        throw new NullReferenceException("This element doesn't exist");
+                        throw new ExistenceException("This element doesn't exist");
                     }
                     else
                     {
@@ -76,13 +76,13 @@ namespace _2_4_2
                     }
                     else
                     {
-                        throw new NullReferenceException("This element doesn't exist");
+                        throw new ExistenceException("This element doesn't exist");
                     }
                 }
             }
             else
             {
-                throw new NullReferenceException("This element doesn't exist");
+                throw new EmptyListException("This element doesn't exist");
             }
         }
 

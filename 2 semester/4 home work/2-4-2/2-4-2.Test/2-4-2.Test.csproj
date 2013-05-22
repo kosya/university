@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02B83F1F-58AF-44FF-8277-6041D36483F6}</ProjectGuid>
+    <ProjectGuid>{11BC67A8-A89B-44FA-A700-CDF3D1EB197E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_2_4_2.Test</RootNamespace>
@@ -54,10 +54,11 @@
     <Compile Include="HashTableTest.cs" />
     <Compile Include="ListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExceptionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2-4-2\2-4-2.csproj">
-      <Project>{33944250-9df6-41e1-a06d-6088a6f87951}</Project>
+      <Project>{95806471-a009-439c-a15b-471baf0432fd}</Project>
       <Name>2-4-2</Name>
     </ProjectReference>
   </ItemGroup>

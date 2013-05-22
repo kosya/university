@@ -10,11 +10,11 @@ namespace _2_4_2
     {
         private int tableSize;
         private List[] hashData;
-        private HashFunction hashfunction;
+        private IHashFunction hashfunction;
 
         public HashTable(int type)
         {
-            hashfunction = new HashFunction(type);
+            hashfunction = new HashFunction1(type);
             hashData = new List[type];
             this.tableSize = type;
             for (int i = 0; i < type; ++i)
