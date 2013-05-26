@@ -10,11 +10,11 @@ namespace _2_3_4
     {
         static void Main(string[] args)
         {
+            IStack stack = new Stack();
             string str = null;
             Console.Write("Write an expression: ");
             str = Console.ReadLine();
-            Calculator calculator = new Calculator(str);
-
+            Calculator calculator = new Calculator(str, stack);
             Console.WriteLine("{0}", calculator.Calculate());
          }
     }
