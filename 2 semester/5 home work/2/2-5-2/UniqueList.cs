@@ -24,18 +24,7 @@ namespace _2_5_2
             }
             else
             {
-                if (IsEmpty())
-                {
-                    ListElement tmp = new ListElement(null, value);
-                    this.head = tmp;
-                    this.tail = tmp;
-                }
-                else
-                {
-                    ListElement tmp = new ListElement(null, value);
-                    this.tail.Next = tmp;
-                    this.tail = tmp;
-                }
+                base.AddElement(value);
             }
         }
     }

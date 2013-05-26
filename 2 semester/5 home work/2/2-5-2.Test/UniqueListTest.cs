@@ -23,6 +23,14 @@ namespace _2_5_2.Test
         }
 
         [TestMethod]
+        [ExpectedException(typeof(RepeatedElementException))]
+        public void TestAddExistedElement()
+        {
+            list.AddElement(2);
+            list.AddElement(2);
+        }
+
+        [TestMethod]
         public void TestDeleteElement()
         {
             list.AddElement(1);

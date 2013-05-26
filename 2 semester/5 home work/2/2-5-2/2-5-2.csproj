@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmptyListException.cs" />
-    <Compile Include="EqualElementsException.cs" />
     <Compile Include="ExistenceException.cs" />
     <Compile Include="List.cs" />
     <Compile Include="ListElement.cs" />
