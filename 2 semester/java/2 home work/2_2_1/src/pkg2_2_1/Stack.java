@@ -27,9 +27,13 @@ public class Stack {
     }
     
     public int pop() {
-        int tmp = this.head.element();
-        this.head = this.head.next();
-        return tmp;
+        if (this.isEmpty()) {
+            return -999;
+        } else {
+            int tmp = this.head.element();
+            this.head = this.head.next();
+            return tmp;
+        }
     }
     
     public void printStack() {
